@@ -3,17 +3,17 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/529086/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Thu, 01 Jan 1970 00:00:00 UTC
+update_date: Sat, 24 Jul 2021 08:45:22 UTC
 stages:
 - id: 917
   step: 13088
-  is_completed: false
+  is_completed: true
 - id: 918
   step: 13089
-  is_completed: false
+  is_completed: true
 - id: 919
   step: 13090
-  is_completed: false
+  is_completed: true
 - id: 920
   step: 13091
   is_completed: false
@@ -196,6 +196,10 @@ topics:
     theory_id: 3624
   - title: The List interface
     theory_id: 3581
+  - title: Interface
+    theory_id: 3615
+  - title: Comparable
+    theory_id: 14456
   - title: Defining classes
     theory_id: 3618
   - title: Constructor
@@ -228,12 +232,8 @@ topics:
     theory_id: 3534
   - title: Hiding and overriding
     theory_id: 3572
-  - title: Polymorphism
-    theory_id: 3587
   - title: toString()
     theory_id: 3584
-  - title: Interface
-    theory_id: 3615
   - title: Boxing and unboxing
     theory_id: 3595
   1:
@@ -322,13 +322,17 @@ topics:
   - title: The utility class Collections
     theory_id: 3573
   4:
-  - title: Authentication
-    theory_id: 14353
   - title: HTTP Basic Auth
     theory_id: 7778
-  - title: Authentication and Authorization
-    theory_id: 14219
+  - title: Getting started with Spring Security
+    theory_id: 13856
+  - title: Authentication
+    theory_id: 14353
   - title: Builder
     theory_id: 5130
+  - title: Authentication and Authorization
+    theory_id: 14219
+  - title: Polymorphism
+    theory_id: 3587
   - title: Abstract class
     theory_id: 3597

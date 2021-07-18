@@ -185,6 +185,116 @@ files:
         }
     }
   learner_created: false
+- name: src/recipes/RecipeController.java
+  visible: true
+  text: |
+    package recipes;
+
+    import lombok.NonNull;
+    import org.springframework.http.HttpStatus;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.PostMapping;
+    import org.springframework.web.bind.annotation.RequestBody;
+    import org.springframework.web.bind.annotation.RestController;
+
+    @RestController
+    public class RecipeController {
+
+        Recipe recipe = new Recipe();
+
+        @NonNull
+        @PostMapping("/api/recipe")
+        public ResponseEntity<?> addRecipe(@RequestBody(required = true) Recipe newRecipe) {
+
+            recipe.setName(newRecipe.getName());
+            recipe.setDescription(newRecipe.getDescription());
+            recipe.setIngredients(newRecipe.getIngredients());
+            recipe.setDirections(newRecipe.getDirections());
+
+            return ResponseEntity.status(HttpStatus.OK).body(recipe);
+        }
+
+        @GetMapping("/api/recipe")
+        public ResponseEntity<?> getRecipe() {
+            return ResponseEntity.status(HttpStatus.OK).body(recipe);
+
+        }
+    }
+  learner_created: true
+- name: src/recipes/Recipe.java
+  visible: true
+  text: |
+    package recipes;
+
+    import com.fasterxml.jackson.annotation.JsonProperty;
+    import lombok.AllArgsConstructor;
+    import lombok.Data;
+    import lombok.NoArgsConstructor;
+    import org.springframework.web.bind.annotation.RequestParam;
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public class Recipe {
+        @JsonProperty(value = "name")
+        private String name;
+        @JsonProperty(value = "description")
+        private String description;
+        @JsonProperty(value = "ingredients")
+        private String ingredients;
+        @JsonProperty(value = "directions")
+        private String directions;
+
+    //    public Recipe(String name, String description, String ingredients, String directions) {
+    //        this.name = name;
+    //        this.description = description;
+    //        this.ingredients = ingredients;
+    //        this.directions = directions;
+    //    }
+    //
+    //    public Recipe() {
+    //    }
+    //
+    //    public String getName() {
+    //        return name;
+    //    }
+    //
+    //    public void setName(String name) {
+    //        this.name = name;
+    //    }
+    //
+    //    public String getDescription() {
+    //        return description;
+    //    }
+    //
+    //    public void setDescription(String description) {
+    //        this.description = description;
+    //    }
+    //
+    //    public String getIngredients() {
+    //        return ingredients;
+    //    }
+    //
+    //    public void setIngredients(String ingredients) {
+    //        this.ingredients = ingredients;
+    //    }
+    //
+    //    public String getDirections() {
+    //        return directions;
+    //    }
+    //
+    //    public void setDirections(String directions) {
+    //        this.directions = directions;
+    //    }
+    }
+  learner_created: true
+- name: src/recipes/RecipesList.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/180/stages/918/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 19 Jul 2021 17:20:26 UTC
+record: 2

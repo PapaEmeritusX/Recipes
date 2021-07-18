@@ -300,6 +300,96 @@ files:
         }
     }
   learner_created: false
+- name: src/recipes/persistence/RecipeRepository.java
+  visible: true
+  learner_created: true
+- name: src/recipes/businessLayer/Recipe.java
+  visible: true
+  text: |
+    package recipes;
+
+    import com.fasterxml.jackson.annotation.JsonIgnore;
+    import com.fasterxml.jackson.annotation.JsonProperty;
+    import lombok.AllArgsConstructor;
+    import lombok.Data;
+    import lombok.NoArgsConstructor;
+    import lombok.NonNull;
+    import org.springframework.stereotype.Component;
+    import org.springframework.web.bind.annotation.RequestParam;
+
+    import java.util.List;
+
+    @NonNull
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Component
+    public class Recipe {
+        @JsonProperty(value = "name")
+        private String name;
+        @JsonProperty(value = "description")
+        private String description;
+        @JsonProperty(value = "ingredients")
+        private List<String> ingredients;
+        @JsonProperty(value = "directions")
+        private List<String> directions;
+
+        @JsonIgnore
+        private int count;
+
+    }
+  learner_created: true
+- name: src/recipes/businessLayer/RecipeService.java
+  visible: true
+  learner_created: true
+- name: src/recipes/presentation/RecipeController.java
+  visible: true
+  text: |
+    package recipes;
+
+    import lombok.NonNull;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.http.HttpStatus;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.stereotype.Component;
+    import org.springframework.web.bind.annotation.*;
+
+    @RestController
+    public class RecipeController {
+
+        @Autowired
+        private RecipesList recipesList;
+
+
+        @PostMapping("/api/recipe/new")
+        @NonNull
+        public ResponseEntity<?> addRecipe(@RequestBody Recipe newRecipe) {
+
+            this.recipesList.add(newRecipe);
+            return ResponseEntity.status(HttpStatus.OK).body(this.recipesList);
+        }
+
+        @NonNull
+        @GetMapping("/api/recipe/{id}")
+        public ResponseEntity<?> getRecipe(@PathVariable int id) {
+            if (recipesList.getBook().containsKey(id)) {
+                return ResponseEntity.status(HttpStatus.OK).body(recipesList.getBook().get(id));
+            } else
+                throw new RecipeNotFoundException();
+
+        }
+        @ResponseStatus(code = HttpStatus.NOT_FOUND)
+        class RecipeNotFoundException extends RuntimeException {
+        }
+
+    }
+  learner_created: true
+- name: src/recipes/businessLayer/ID.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/180/stages/919/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Sat, 24 Jul 2021 10:04:14 UTC
 record: -1
