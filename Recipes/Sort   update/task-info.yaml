@@ -627,6 +627,211 @@ files:
         }
     }
   learner_created: false
+- name: src/recipes/presentation/RecipeController.java
+  visible: true
+  text: |
+    package recipes.presentation;
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.http.HttpStatus;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.web.bind.annotation.*;
+    import recipes.businessLayer.ID;
+    import recipes.businessLayer.Recipe;
+    import recipes.businessLayer.RecipeService;
+    import javax.validation.Valid;
+    import javax.validation.constraints.Pattern;
+
+    @RestController
+    @RequestMapping("/api")
+    public class RecipeController {
+
+        @Autowired
+        private RecipeService recipeService;
+        @Autowired
+        private ID id;
+
+        @PostMapping("/recipe/new")
+        public ResponseEntity<?> addRecipe(@Valid @RequestBody Recipe recipe) {
+            Recipe recipeCreate = recipeService.save(new Recipe(recipe.getName(), recipe.getDescription(), recipe.getIngredients(), recipe.getDirections()));
+            this.id.setId(recipeCreate.getId());
+            return ResponseEntity.status(HttpStatus.OK).body(id);
+        }
+
+
+        @GetMapping("/recipe/{id}")
+        public ResponseEntity<?> getRecipe(@PathVariable @Pattern(regexp = "[0-9]+") Long id) {
+            if (recipeService.findRecipeById(id).isPresent()) {
+                return ResponseEntity.status(HttpStatus.OK).body(recipeService.findRecipeById(id));
+            } else {
+                throw new RecipeNotFoundException();
+            }
+        }
+
+        @DeleteMapping("/recipe/{id}")
+        public ResponseEntity<?> deleteRecipe(@PathVariable("id") @Pattern(regexp = "[0-9]+")Long id) {
+            if (recipeService.findRecipeById(id).isPresent()) {
+                recipeService.deleteById(id);
+                throw  new NoContentRecipeException();
+            } else {
+                throw new RecipeNotFoundException();
+            }
+        }
+
+        @ResponseStatus(code = HttpStatus.NOT_FOUND)
+        class RecipeNotFoundException extends RuntimeException {
+        }
+        @ResponseStatus(code = HttpStatus.NO_CONTENT)
+        class NoContentRecipeException extends RuntimeException {
+        }
+    }
+  learner_created: true
+- name: src/recipes/persistence/RecipeRepository.java
+  visible: true
+  text: |
+    package recipes.persistence;
+
+    import org.springframework.data.repository.CrudRepository;
+    import org.springframework.stereotype.Repository;
+    import recipes.businessLayer.Recipe;
+    import java.util.Optional;
+
+    @Repository
+    public interface RecipeRepository extends CrudRepository<Recipe, Long> {
+
+        Optional<Recipe> findById(Long id);
+
+        void deleteById(Long id);
+
+
+    }
+  learner_created: true
+- name: src/recipes/businessLayer/Recipe.java
+  visible: true
+  text: |
+    package recipes.businessLayer;
+
+    import com.fasterxml.jackson.annotation.JsonIgnore;
+    import lombok.AllArgsConstructor;
+    import lombok.Data;
+    import lombok.NoArgsConstructor;
+    import javax.persistence.*;
+    import javax.validation.constraints.NotBlank;
+    import javax.validation.constraints.NotNull;
+    import javax.validation.constraints.Size;
+    import java.util.List;
+    import java.util.Objects;
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Entity
+    @Table(name = "Recipe")
+    public class Recipe {
+
+        @Id
+        @JsonIgnore()
+        @Column(name = "id")
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        private Long id;
+        @NotNull
+        @NotBlank
+        @Column(name = "name")
+        private String name;
+
+        @NotNull
+        @NotBlank
+        @Column(name = "description")
+        private String description;
+
+        @NotNull
+        @Size(min = 1)
+        @ElementCollection
+        private List<String> ingredients;
+
+        @NotNull
+        @Size(min = 1)
+        @ElementCollection
+        private List<String> directions;
+
+
+        public Recipe(String name, String description, List<String> ingredients, List<String> directions) {
+            this.name = name;
+            this.description = description;
+            this.ingredients = ingredients;
+            this.directions = directions;
+        }
+
+    }
+  learner_created: true
+- name: src/recipes/businessLayer/ID.java
+  visible: true
+  text: |
+    package recipes.businessLayer;
+
+    import lombok.Data;
+    import org.springframework.stereotype.Component;
+
+    import javax.persistence.GeneratedValue;
+    import javax.persistence.GenerationType;
+    import javax.validation.constraints.NotNull;
+
+    @Data
+    @Component
+    public class ID {
+
+        //@NotNull
+    //    @GeneratedValue(strategy = GenerationType.AUTO)
+        private Long id;
+
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+    }
+  learner_created: true
+- name: src/recipes/businessLayer/RecipeService.java
+  visible: true
+  text: |
+    package recipes.businessLayer;
+
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.stereotype.Service;
+    import recipes.persistence.RecipeRepository;
+    import java.util.Optional;
+
+    @Service
+    public class RecipeService {
+
+
+        private final RecipeRepository recipeRepository;
+
+        @Autowired
+        public RecipeService(RecipeRepository recipeRepository) {
+            this.recipeRepository = recipeRepository;
+        }
+
+        public Optional<Recipe> findRecipeById(Long id) {
+            return recipeRepository.findById(id);
+        }
+
+        public Recipe save(Recipe recipe) {
+            return recipeRepository.save(recipe);
+        }
+
+        public void deleteById(Long id) {
+            recipeRepository.deleteById(id);
+        };
+
+
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/180/stages/920/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 26 Jul 2021 12:56:56 UTC
 record: -1

@@ -3,6 +3,8 @@ package recipes.businessLayer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import recipes.persistence.RecipeRepository;
+
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,6 +29,13 @@ public class RecipeService {
     public void deleteById(Long id) {
         recipeRepository.deleteById(id);
     };
+
+    public List<Recipe> findByCategory(String category) {
+        return recipeRepository.findAllByCategoryIgnoreCaseOrderByDateDesc(category);
+    }
+    public List<Recipe> findByName(String name) {
+        return recipeRepository.findAllByNameIgnoreCaseContainingOrderByDateDesc(name);
+    }
 
 
 }

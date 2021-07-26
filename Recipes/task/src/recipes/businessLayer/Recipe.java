@@ -1,5 +1,6 @@
 package recipes.businessLayer;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,8 +9,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,14 +24,22 @@ public class Recipe {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotNull
-    @NotBlank
-    @Column(name = "name")
-    private String name;
 
     @NotNull
     @NotBlank
-    @Column(name = "description")
+    private String name;
+
+
+    @NotNull
+    @NotBlank
+    private String category;
+
+    @Column(columnDefinition = "TIMESTAMP")
+    @JsonFormat(pattern = "dd.MM.YYYY HH:mm:ss.SSSSSS")
+    private LocalDateTime date;
+
+    @NotNull
+    @NotBlank
     private String description;
 
     @NotNull
@@ -43,8 +53,14 @@ public class Recipe {
     private List<String> directions;
 
 
-    public Recipe(String name, String description, List<String> ingredients, List<String> directions) {
+    public Recipe(String name,
+                  String category,
+                  String description,
+                  List<String> ingredients,
+                  List<String> directions) {
+
         this.name = name;
+        this.category = category;
         this.description = description;
         this.ingredients = ingredients;
         this.directions = directions;
