@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/529086/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: Mon, 26 Jul 2021 09:29:25 UTC
+update_date: Thu, 29 Jul 2021 12:52:56 UTC
 stages:
 - id: 917
   step: 13088
@@ -26,10 +26,10 @@ topics:
     theory_id: 3739
   - title: JVM, JRE, and JDK
     theory_id: 3499
-  - title: Immutability
-    theory_id: 7929
   - title: Units of information
     theory_id: 6865
+  - title: Immutability
+    theory_id: 7929
   - title: IDE
     theory_id: 10996
   - title: Computer algorithms
@@ -76,8 +76,10 @@ topics:
     theory_id: 13292
   - title: Handling requests with bodies
     theory_id: 13334
-  - title: External resources
-    theory_id: 6216
+  - title: JSON
+    theory_id: 6854
+  - title: YAML
+    theory_id: 12722
   - title: Computer programming
     theory_id: 8739
   - title: Introduction to Java
@@ -88,8 +90,14 @@ topics:
     theory_id: 3521
   - title: Printing data
     theory_id: 3749
+  - title: External resources
+    theory_id: 6216
   - title: Types and variables
     theory_id: 3518
+  - title: Sizes and ranges
+    theory_id: 3532
+  - title: Type casting
+    theory_id: 3510
   - title: Comments
     theory_id: 3520
   - title: Coding style conventions
@@ -124,14 +132,6 @@ topics:
     theory_id: 3507
   - title: Switch statement
     theory_id: 3504
-  - title: JSON
-    theory_id: 6854
-  - title: YAML
-    theory_id: 12722
-  - title: Sizes and ranges
-    theory_id: 3532
-  - title: Type casting
-    theory_id: 3510
   - title: Libraries
     theory_id: 8504
   - title: Frameworks
@@ -196,10 +196,6 @@ topics:
     theory_id: 3624
   - title: The List interface
     theory_id: 3581
-  - title: Interface
-    theory_id: 3615
-  - title: Comparable
-    theory_id: 14456
   - title: Defining classes
     theory_id: 3618
   - title: Constructor
@@ -234,6 +230,10 @@ topics:
     theory_id: 3572
   - title: toString()
     theory_id: 3584
+  - title: Interface
+    theory_id: 3615
+  - title: Comparable
+    theory_id: 14456
   - title: Boxing and unboxing
     theory_id: 3595
   1:
@@ -328,10 +328,10 @@ topics:
     theory_id: 13856
   - title: Authentication
     theory_id: 14353
-  - title: Builder
-    theory_id: 5130
   - title: Authentication and Authorization
     theory_id: 14219
+  - title: Builder
+    theory_id: 5130
   - title: Polymorphism
     theory_id: 3587
   - title: Abstract class
