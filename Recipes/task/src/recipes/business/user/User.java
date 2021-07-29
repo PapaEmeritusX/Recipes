@@ -31,7 +31,7 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Recipe> recipes = new ArrayList<>();
+    private ArrayList<Recipe> recipes = new ArrayList<>();
 
     @Column(name = "role")
     private String roles = "USER";
@@ -39,7 +39,7 @@ public class User {
     public String getEmail() {
         return this.email;
     }
-    public List<Recipe> getRecipes() {
+    public ArrayList<Recipe> getRecipes() {
         return this.recipes;
     }
 }

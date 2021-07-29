@@ -46,7 +46,8 @@ public class RecipeController {
         recipeCreate.setUser(user);
 
         Recipe toAddRecipe = recipeService.save(recipeCreate);
-        System.out.println(toAddRecipe);
+        user.getRecipes().add(toAddRecipe);
+        System.out.println(user);
         this.id.setId(recipeCreate.getId());
 
         return ResponseEntity.status(HttpStatus.OK).body(id);

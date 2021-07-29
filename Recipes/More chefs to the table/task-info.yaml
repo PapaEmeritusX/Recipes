@@ -1116,1019 +1116,256 @@ files:
 feedback_link: https://hyperskill.org/projects/180/stages/921/implement#comment
 status: Failed
 feedback:
-  message: "Wrong answer in test #9\n\nPOST /api/recipe/new should respond with status\
-    \ code 200, responded: 500\n\nResponse body:\n{&quot;timestamp&quot;:&quot;2021-07-29T12:52:57.197+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal\
-    \ Server Error&quot;,&quot;message&quot;:&quot;&quot;,&quot;path&quot;:&quot;/api/recipe/new&quot;}\n\
-    \nPlease find below the output of your program during this failed test.\n\n---\n\
-    \n\n  .   ____          _            __ _ _\n /\\\\ / ___&#39;_ __ _ _(_)_ __\
-    \  __ _ \\ \\ \\ \\\n( ( )\\___ | &#39;_ | &#39;_| | &#39;_ \\/ _` | \\ \\ \\\
-    \ \\\n \\\\/  ___)| |_)| | | | | || (_| |  ) ) ) )\n  &#39;  |____| .__|_| |_|_|\
-    \ |_\\__, | / / / /\n =========|_|==============|___/=/_/_/_/\n :: Spring Boot\
-    \ ::        (v2.3.1.RELEASE)\n\n2021-07-29 17:52:50.435  INFO 24196 --- [    Test\
-    \ worker] recipes.RecipesApplication               : Starting RecipesApplication\
-    \ on DESKTOP-RT04MDB with PID 24196 (started by karim in C:\\Users\\karim\\IdeaProjects\\\
-    Recipes\\Recipes\\task)\n2021-07-29 17:52:50.438  INFO 24196 --- [    Test worker]\
-    \ recipes.RecipesApplication               : No active profile set, falling back\
-    \ to default profiles: default\n2021-07-29 17:52:51.604  INFO 24196 --- [    Test\
-    \ worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data\
-    \ JPA repositories in DEFERRED mode.\n2021-07-29 17:52:51.679  INFO 24196 ---\
-    \ [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring\
-    \ Data repository scanning in 65ms. Found 2 JPA repository interfaces.\n2021-07-29\
-    \ 17:52:52.359  INFO 24196 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer\
-    \  : Tomcat initialized with port(s): 8881 (http)\n2021-07-29 17:52:52.373  INFO\
-    \ 24196 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting\
-    \ service [Tomcat]\n2021-07-29 17:52:52.373  INFO 24196 --- [    Test worker]\
-    \ org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache\
-    \ Tomcat/9.0.36]\n2021-07-29 17:52:52.547  INFO 24196 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]\
-    \       : Initializing Spring embedded WebApplicationContext\n2021-07-29 17:52:52.547\
-    \  INFO 24196 --- [    Test worker] w.s.c.ServletWebServerApplicationContext :\
-    \ Root WebApplicationContext: initialization completed in 2053 ms\n2021-07-29\
-    \ 17:52:52.687  INFO 24196 --- [    Test worker] com.zaxxer.hikari.HikariDataSource\
-    \       : HikariPool-1 - Starting...\n2021-07-29 17:52:52.911  INFO 24196 ---\
-    \ [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 -\
-    \ Start completed.\n2021-07-29 17:52:52.919  INFO 24196 --- [    Test worker]\
-    \ o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at &#39;/h2&#39;.\
-    \ Database available at &#39;jdbc:h2:file:../recipes_db&#39;\n2021-07-29 17:52:53.094\
-    \  INFO 24196 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  :\
-    \ Initializing ExecutorService &#39;applicationTaskExecutor&#39;\n2021-07-29 17:52:53.166\
-    \  INFO 24196 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper  :\
-    \ HHH000204: Processing PersistenceUnitInfo [name: default]\n2021-07-29 17:52:53.225\
-    \  WARN 24196 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration :\
+  message: "Exception in test #1\n\nCannot start Spring application\n\norg.springframework.beans.factory.BeanCreationException:\
+    \ Error creating bean with name &#39;userRepository&#39; defined in recipes.persistence.UserRepository\
+    \ defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration:\
+    \ Cannot resolve reference to bean &#39;jpaMappingContext&#39; while setting bean\
+    \ property &#39;mappingContext&#39;; nested exception is org.springframework.beans.factory.BeanCreationException:\
+    \ Error creating bean with name &#39;jpaMappingContext&#39;: Invocation of init\
+    \ method failed; nested exception is org.hibernate.AnnotationException: java.util.ArrayList\
+    \ collection type not supported for property: recipes.business.user.User.recipes\r\
+    \n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)\r\
+    \n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)\r\
+    \n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1699)\r\
+    \n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1444)\r\
+    \n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)\r\
+    \n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)\r\
+    \n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)\r\
+    \n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)\r\
+    \n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)\r\
+    \n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)\r\
+    \n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:621)\r\
+    \n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:609)\r\
+    \n\tat org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:51)\r\
+    \n\tat org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:36)\r\
+    \n\tat org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)\r\
+    \n\tat org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)\r\
+    \n\tat org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)\r\
+    \n\tat org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)\r\
+    \n\tat org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)\r\
+    \n\tat org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)\r\
+    \n\tat org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)\r\
+    \n\tat org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)\r\
+    \n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)\r\
+    \n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)\r\
+    \n\tat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)\r\
+    \n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:315)\r\
+    \n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)\r\
+    \n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)\r\
+    \n\tat recipes.RecipesApplication.main(RecipesApplication.java:11)\n\nPlease find\
+    \ below the output of your program during this failed test.\n\n---\n\n\n  .  \
+    \ ____          _            __ _ _\n /\\\\ / ___&#39;_ __ _ _(_)_ __  __ _ \\\
+    \ \\ \\ \\\n( ( )\\___ | &#39;_ | &#39;_| | &#39;_ \\/ _` | \\ \\ \\ \\\n \\\\\
+    /  ___)| |_)| | | | | || (_| |  ) ) ) )\n  &#39;  |____| .__|_| |_|_| |_\\__,\
+    \ | / / / /\n =========|_|==============|___/=/_/_/_/\n :: Spring Boot ::    \
+    \    (v2.3.1.RELEASE)\n\n2021-07-29 18:19:25.278  INFO 6552 --- [    Test worker]\
+    \ recipes.RecipesApplication               : Starting RecipesApplication on DESKTOP-RT04MDB\
+    \ with PID 6552 (started by karim in C:\\Users\\karim\\IdeaProjects\\Recipes\\\
+    Recipes\\task)\n2021-07-29 18:19:25.283  INFO 6552 --- [    Test worker] recipes.RecipesApplication\
+    \               : No active profile set, falling back to default profiles: default\n\
+    2021-07-29 18:19:26.572  INFO 6552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate\
+    \ : Bootstrapping Spring Data JPA repositories in DEFERRED mode.\n2021-07-29 18:19:26.661\
+    \  INFO 6552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate :\
+    \ Finished Spring Data repository scanning in 77ms. Found 2 JPA repository interfaces.\n\
+    2021-07-29 18:19:27.401  INFO 6552 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer\
+    \  : Tomcat initialized with port(s): 8881 (http)\n2021-07-29 18:19:27.416  INFO\
+    \ 6552 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting\
+    \ service [Tomcat]\n2021-07-29 18:19:27.416  INFO 6552 --- [    Test worker] org.apache.catalina.core.StandardEngine\
+    \  : Starting Servlet engine: [Apache Tomcat/9.0.36]\n2021-07-29 18:19:27.625\
+    \  INFO 6552 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       :\
+    \ Initializing Spring embedded WebApplicationContext\n2021-07-29 18:19:27.625\
+    \  INFO 6552 --- [    Test worker] w.s.c.ServletWebServerApplicationContext :\
+    \ Root WebApplicationContext: initialization completed in 2280 ms\n2021-07-29\
+    \ 18:19:27.792  INFO 6552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource\
+    \       : HikariPool-1 - Starting...\n2021-07-29 18:19:28.043  INFO 6552 --- [\
+    \    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start\
+    \ completed.\n2021-07-29 18:19:28.052  INFO 6552 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration\
+    \    : H2 console available at &#39;/h2&#39;. Database available at &#39;jdbc:h2:file:../recipes_db&#39;\n\
+    2021-07-29 18:19:28.254  INFO 6552 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor\
+    \  : Initializing ExecutorService &#39;applicationTaskExecutor&#39;\n2021-07-29\
+    \ 18:19:28.324  INFO 6552 --- [         task-1] o.hibernate.jpa.internal.util.LogHelper\
+    \  : HHH000204: Processing PersistenceUnitInfo [name: default]\n2021-07-29 18:19:28.395\
+    \  WARN 6552 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration :\
     \ spring.jpa.open-in-view is enabled by default. Therefore, database queries may\
     \ be performed during view rendering. Explicitly configure spring.jpa.open-in-view\
-    \ to disable this warning\n2021-07-29 17:52:53.242  INFO 24196 --- [         task-1]\
+    \ to disable this warning\n2021-07-29 18:19:28.413  INFO 6552 --- [         task-1]\
     \ org.hibernate.Version                    : HHH000412: Hibernate ORM core version\
-    \ 5.4.17.Final\nIn Configure AUTH\nIn Configure HTTP\n2021-07-29 17:52:53.442\
-    \  INFO 24196 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     :\
-    \ Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71f6a8fa,\
-    \ org.springframework.security.web.context.SecurityContextPersistenceFilter@5e6dc5cf,\
-    \ org.springframework.security.web.header.HeaderWriterFilter@46c05743, org.springframework.security.web.authentication.logout.LogoutFilter@2b921288,\
-    \ org.springframework.security.web.authentication.www.BasicAuthenticationFilter@74dd7f03,\
-    \ org.springframework.security.web.savedrequest.RequestCacheAwareFilter@65f2b516,\
-    \ org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b59c0d6,\
-    \ org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54ff922,\
-    \ org.springframework.security.web.session.SessionManagementFilter@56233682, org.springframework.security.web.access.ExceptionTranslationFilter@2a0e87cb,\
-    \ org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66b93a2]\n\
-    2021-07-29 17:52:53.456  INFO 24196 --- [         task-1] o.hibernate.annotations.common.Version\
-    \   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}\n2021-07-29 17:52:53.670\
-    \  INFO 24196 --- [         task-1] org.hibernate.dialect.Dialect            :\
-    \ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect\n2021-07-29 17:52:54.765\
-    \  INFO 24196 --- [         task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       :\
-    \ HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]\n\
-    2021-07-29 17:52:54.775  INFO 24196 --- [         task-1] j.LocalContainerEntityManagerFactoryBean\
-    \ : Initialized JPA EntityManagerFactory for persistence unit &#39;default&#39;\n\
-    2021-07-29 17:52:54.832  INFO 24196 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver\
-    \      : Exposing 14 endpoint(s) beneath base path &#39;/actuator&#39;\n2021-07-29\
-    \ 17:52:54.890  INFO 24196 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer\
-    \  : Tomcat started on port(s): 8881 (http) with context path &#39;&#39;\n2021-07-29\
-    \ 17:52:54.891  INFO 24196 --- [    Test worker] DeferredRepositoryInitializationListener\
+    \ 5.4.17.Final\nIn Configure AUTH\nIn Configure HTTP\n2021-07-29 18:19:28.667\
+    \  INFO 6552 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     :\
+    \ Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65e20b3c,\
+    \ org.springframework.security.web.context.SecurityContextPersistenceFilter@18e3717c,\
+    \ org.springframework.security.web.header.HeaderWriterFilter@55138540, org.springframework.security.web.authentication.logout.LogoutFilter@460899f5,\
+    \ org.springframework.security.web.authentication.www.BasicAuthenticationFilter@94c34d9,\
+    \ org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6903167f,\
+    \ org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35a8199e,\
+    \ org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12940900,\
+    \ org.springframework.security.web.session.SessionManagementFilter@5c9b013f, org.springframework.security.web.access.ExceptionTranslationFilter@1bef2ec4,\
+    \ org.springframework.security.web.access.intercept.FilterSecurityInterceptor@9500715]\n\
+    2021-07-29 18:19:28.683  INFO 6552 --- [         task-1] o.hibernate.annotations.common.Version\
+    \   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}\n2021-07-29 18:19:28.903\
+    \  INFO 6552 --- [         task-1] org.hibernate.dialect.Dialect            :\
+    \ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect\n2021-07-29 18:19:29.335\
+    \  INFO 6552 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      :\
+    \ Exposing 14 endpoint(s) beneath base path &#39;/actuator&#39;\n2021-07-29 18:19:29.394\
+    \  INFO 6552 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  :\
+    \ Tomcat started on port(s): 8881 (http) with context path &#39;&#39;\n2021-07-29\
+    \ 18:19:29.396  INFO 6552 --- [    Test worker] DeferredRepositoryInitializationListener\
     \ : Triggering deferred initialization of Spring Data repositories…\n2021-07-29\
-    \ 17:52:55.249  INFO 24196 --- [    Test worker] DeferredRepositoryInitializationListener\
-    \ : Spring Data repositories initialized!\n2021-07-29 17:52:55.264  INFO 24196\
-    \ --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication\
-    \ in 5.231 seconds (JVM running for 6.29)\n2021-07-29 17:52:55.663  INFO 24196\
-    \ --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing\
-    \ Spring DispatcherServlet &#39;dispatcherServlet&#39;\n2021-07-29 17:52:55.663\
-    \  INFO 24196 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        :\
-    \ Initializing Servlet &#39;dispatcherServlet&#39;\n2021-07-29 17:52:55.674  INFO\
-    \ 24196 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed\
-    \ initialization in 10 ms\n2021-07-29 17:52:56.669  WARN 24196 --- [nio-8881-exec-5]\
-    \ .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException:\
-    \ Validation failed for argument [0] in public void recipes.presentation.UserController.registerUser(recipes.business.user.User):\
-    \ [Field error in object &#39;user&#39; on field &#39;email&#39;: rejected value\
-    \ [Test3@testcom]; codes [Pattern.user.email,Pattern.email,Pattern.java.lang.String,Pattern];\
-    \ arguments [org.springframework.context.support.DefaultMessageSourceResolvable:\
-    \ codes [user.email,email]; arguments []; default message [email],[Ljavax.validation.constraints.Pattern$Flag;@4ead674b,.*@.*\\\
-    ..+]; default message [must match &quot;.*@.*\\..+&quot;]] ]\n2021-07-29 17:52:56.687\
-    \  WARN 24196 --- [nio-8881-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver :\
-    \ Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation\
-    \ failed for argument [0] in public void recipes.presentation.UserController.registerUser(recipes.business.user.User)\
-    \ with 2 errors: [Field error in object &#39;user&#39; on field &#39;email&#39;:\
-    \ rejected value [Test4test.com]; codes [Email.user.email,Email.email,Email.java.lang.String,Email];\
-    \ arguments [org.springframework.context.support.DefaultMessageSourceResolvable:\
-    \ codes [user.email,email]; arguments []; default message [email],[Ljavax.validation.constraints.Pattern$Flag;@2d043ab4,.*];\
-    \ default message [must be a well-formed email address]] [Field error in object\
-    \ &#39;user&#39; on field &#39;email&#39;: rejected value [Test4test.com]; codes\
-    \ [Pattern.user.email,Pattern.email,Pattern.java.lang.String,Pattern]; arguments\
-    \ [org.springframework.context.support.DefaultMessageSourceResolvable: codes [user.email,email];\
-    \ arguments []; default message [email],[Ljavax.validation.constraints.Pattern$Flag;@4ead674b,.*@.*\\\
-    ..+]; default message [must match &quot;.*@.*\\..+&quot;]] ]\n2021-07-29 17:52:56.700\
-    \  WARN 24196 --- [nio-8881-exec-7] .w.s.m.s.DefaultHandlerExceptionResolver :\
-    \ Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation\
-    \ failed for argument [0] in public void recipes.presentation.UserController.registerUser(recipes.business.user.User):\
-    \ [Field error in object &#39;user&#39; on field &#39;password&#39;: rejected\
-    \ value [Test555]; codes [Size.user.password,Size.password,Size.java.lang.String,Size];\
-    \ arguments [org.springframework.context.support.DefaultMessageSourceResolvable:\
-    \ codes [user.password,password]; arguments []; default message [password],2147483647,8];\
-    \ default message [size must be between 8 and 2147483647]] ]\n2021-07-29 17:52:56.710\
-    \  WARN 24196 --- [nio-8881-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver :\
-    \ Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation\
-    \ failed for argument [0] in public void recipes.presentation.UserController.registerUser(recipes.business.user.User):\
-    \ [Field error in object &#39;user&#39; on field &#39;password&#39;: rejected\
-    \ value [        ]; codes [NotBlank.user.password,NotBlank.password,NotBlank.java.lang.String,NotBlank];\
-    \ arguments [org.springframework.context.support.DefaultMessageSourceResolvable:\
-    \ codes [user.password,password]; arguments []; default message [password]]; default\
-    \ message [must not be blank]] ]\n2021-07-29 17:52:57.086  WARN 24196 --- [nio-8881-exec-9]\
-    \ o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance\
-    \ for session ID generation using [SHA1PRNG] took [173] milliseconds.\n2021-07-29\
-    \ 17:52:57.166 ERROR 24196 --- [nio-8881-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]\
-    \    : Servlet.service() for servlet [dispatcherServlet] in context with path\
-    \ [] threw exception [Handler dispatch failed; nested exception is java.lang.StackOverflowError]\
-    \ with root cause\n\njava.lang.StackOverflowError: null\n\tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:465)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]\n\
-    \tat java.base/java.util.AbstractCollection.toString(AbstractCollection.java:473)\
-    \ ~[na:na]\n\tat org.hibernate.collection.internal.PersistentBag.toString(PersistentBag.java:622)\
-    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat java.base/java.lang.String.valueOf(String.java:2951)\
-    \ ~[na:na]\n\tat recipes.business.user.User.toString(User.java:13) ~[main/:na]\n\
-    \tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\tat recipes.business.recipe.Recipe.toString(Recipe.java:17)\
-    \ ~[main/:na]\n\tat java.base/java.lang.String.valueOf(String.java:2951) ~[na:na]\n\
-    \tat java.base/java.lang.StringBuilder.append(StringBuilder.java:168) ~[na:na]"
-  time: Thu, 29 Jul 2021 12:52:57 UTC
+    \ 18:19:29.449  WARN 6552 --- [    Test worker] ConfigServletWebServerApplicationContext\
+    \ : Exception encountered during context initialization - cancelling refresh attempt:\
+    \ org.springframework.beans.factory.BeanCreationException: Error creating bean\
+    \ with name &#39;userRepository&#39; defined in recipes.persistence.UserRepository\
+    \ defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration:\
+    \ Cannot resolve reference to bean &#39;jpaMappingContext&#39; while setting bean\
+    \ property &#39;mappingContext&#39;; nested exception is org.springframework.beans.factory.BeanCreationException:\
+    \ Error creating bean with name &#39;jpaMappingContext&#39;: Invocation of init\
+    \ method failed; nested exception is org.hibernate.AnnotationException: java.util.ArrayList\
+    \ collection type not supported for property: recipes.business.user.User.recipes\n\
+    2021-07-29 18:19:29.451  WARN 6552 --- [    Test worker] o.s.b.f.support.DisposableBeanAdapter\
+    \    : Invocation of destroy method failed on bean with name &#39;tomcatMetricsBinder&#39;:\
+    \ java.lang.NullPointerException\n2021-07-29 18:19:29.452  INFO 6552 --- [   \
+    \ Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory\
+    \ for persistence unit &#39;default&#39;\n2021-07-29 18:19:29.452  WARN 6552 ---\
+    \ [    Test worker] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy\
+    \ method failed on bean with name &#39;entityManagerFactory&#39;: org.hibernate.AnnotationException:\
+    \ java.util.ArrayList collection type not supported for property: recipes.business.user.User.recipes\n\
+    2021-07-29 18:19:29.452  INFO 6552 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor\
+    \  : Shutting down ExecutorService &#39;applicationTaskExecutor&#39;\n2021-07-29\
+    \ 18:19:29.453  INFO 6552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource\
+    \       : HikariPool-1 - Shutdown initiated...\n2021-07-29 18:19:29.472  INFO\
+    \ 6552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1\
+    \ - Shutdown completed.\n2021-07-29 18:19:29.644  INFO 6552 --- [    Test worker]\
+    \ o.apache.catalina.core.StandardService   : Stopping service [Tomcat]\n2021-07-29\
+    \ 18:19:29.663  INFO 6552 --- [    Test worker] ConditionEvaluationReportLoggingListener\
+    \ : \n\nError starting ApplicationContext. To display the conditions report re-run\
+    \ your application with &#39;debug&#39; enabled.\n2021-07-29 18:19:29.677 ERROR\
+    \ 6552 --- [    Test worker] o.s.boot.SpringApplication               : Application\
+    \ run failed\n\norg.springframework.beans.factory.BeanCreationException: Error\
+    \ creating bean with name &#39;userRepository&#39; defined in recipes.persistence.UserRepository\
+    \ defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration:\
+    \ Cannot resolve reference to bean &#39;jpaMappingContext&#39; while setting bean\
+    \ property &#39;mappingContext&#39;; nested exception is org.springframework.beans.factory.BeanCreationException:\
+    \ Error creating bean with name &#39;jpaMappingContext&#39;: Invocation of init\
+    \ method failed; nested exception is org.hibernate.AnnotationException: java.util.ArrayList\
+    \ collection type not supported for property: recipes.business.user.User.recipes\n\
+    \tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1699)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1444)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:621)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:609)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:51)\
+    \ ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat org.springframework.data.repository.config.DeferredRepositoryInitializationListener.onApplicationEvent(DeferredRepositoryInitializationListener.java:36)\
+    \ ~[spring-data-commons-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)\
+    \ ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)\
+    \ ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)\
+    \ ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)\
+    \ ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)\
+    \ ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)\
+    \ ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)\
+    \ ~[spring-context-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)\
+    \ ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)\
+    \ ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)\
+    \ ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)\
+    \ ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:315)\
+    \ ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)\
+    \ ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)\
+    \ ~[spring-boot-2.3.1.RELEASE.jar:2.3.1.RELEASE]\n\tat recipes.RecipesApplication.main(RecipesApplication.java:11)\
+    \ ~[main/:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.hyperskill.hstest.stage.SpringTest.startSpring(SpringTest.java:141) ~[hs-test-release-SNAPSHOT.jar:na]\n\
+    \tat org.hyperskill.hstest.stage.SpringTest.launchSpring(SpringTest.java:50) ~[hs-test-release-SNAPSHOT.jar:na]\n\
+    \tat org.hyperskill.hstest.testing.runner.SpringApplicationRunner.launchSpringBootApplication(SpringApplicationRunner.java:20)\
+    \ ~[hs-test-release-SNAPSHOT.jar:na]\n\tat org.hyperskill.hstest.testing.runner.SpringApplicationRunner.setUp(SpringApplicationRunner.java:35)\
+    \ ~[hs-test-release-SNAPSHOT.jar:na]\n\tat org.hyperskill.hstest.testing.TestRun.setUp(TestRun.java:70)\
+    \ ~[hs-test-release-SNAPSHOT.jar:na]\n\tat org.hyperskill.hstest.stage.StageTest.start(StageTest.java:111)\
+    \ ~[hs-test-release-SNAPSHOT.jar:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:413)\
+    \ ~[junit-4.13.jar:4.13]\n\tat org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)\
+    \ ~[na:na]\n\tat org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)\
+    \ ~[na:na]\n\tat org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)\
+    \ ~[na:na]\n\tat org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)\
+    \ ~[na:na]\n\tat org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)\
+    \ ~[na:na]\n\tat org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)\
+    \ ~[na:na]\n\tat org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)\
+    \ ~[na:na]\n\tat org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)\
+    \ ~[na:na]\n\tat com.sun.proxy.$Proxy2.processTestClass(Unknown Source) ~[na:na]\n\
+    \tat org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:121)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native\
+    \ Method) ~[na:na]\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\
+    \ ~[na:na]\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\
+    \ ~[na:na]\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]\n\
+    \tat org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)\
+    \ ~[na:na]\n\tat org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)\
+    \ ~[na:na]\n\tat org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)\
+    \ ~[na:na]\n\tat org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)\
+    \ ~[na:na]\n\tat org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:414)\
+    \ ~[na:na]\n\tat org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)\
+    \ ~[na:na]\n\tat org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)\
+    \ ~[na:na]\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\
+    \ ~[na:na]\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\
+    \ ~[na:na]\n\tat org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)\
+    \ ~[na:na]\n\tat java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]\nCaused\
+    \ by: org.springframework.beans.factory.BeanCreationException: Error creating\
+    \ bean with name &#39;jpaMappingContext&#39;: Invocation of init method failed;\
+    \ nested exception is org.hibernate.AnnotationException: java.util.ArrayList collection\
+    \ type not supported for property: recipes.business.user.User.recipes\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)\
+    \ ~[spring-beans-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\t... 89 common frames omitted\n\
+    Caused by: org.hibernate.AnnotationException: java.util.ArrayList collection type\
+    \ not supported for property: recipes.business.user.User.recipes\n\tat org.hibernate.cfg.annotations.CollectionBinder.getCollectionBinder(CollectionBinder.java:317)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.hibernate.cfg.AnnotationBinder.processElementAnnotations(AnnotationBinder.java:1939)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.hibernate.cfg.AnnotationBinder.processIdPropertiesIfNotAlready(AnnotationBinder.java:975)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:802)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:254)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:230)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:273)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1224)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1255)\
+    \ ~[hibernate-core-5.4.17.Final.jar:5.4.17.Final]\n\tat org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)\
+    \ ~[spring-orm-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)\
+    \ ~[spring-orm-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)\
+    \ ~[spring-orm-5.2.7.RELEASE.jar:5.2.7.RELEASE]\n\tat java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)\
+    \ ~[na:na]\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\
+    \ ~[na:na]\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\
+    \ ~[na:na]\n\t... 1 common frames omitted"
+  time: Thu, 29 Jul 2021 13:19:29 UTC
 record: -1
