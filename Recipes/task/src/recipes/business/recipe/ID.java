@@ -3,12 +3,14 @@ package recipes.business.recipe;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
+
 
 @Data
 @Component
 public class ID {
 
-
+    @NotNull
     private Long id;
 
     public Long getId() {

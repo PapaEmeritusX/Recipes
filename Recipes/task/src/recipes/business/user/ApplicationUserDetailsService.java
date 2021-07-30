@@ -1,4 +1,4 @@
-package recipes.presentation;
+package recipes.business.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -23,10 +23,8 @@ public class ApplicationUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
-        User user = userRepository.findByEmail(email);
+        User user = userRepository.findByEmail(email).orElseThrow();
 
-        if (user == null)
-            throw new UsernameNotFoundException("User not found!");
 
         return new UserDetails() {
             @Override

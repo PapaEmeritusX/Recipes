@@ -13,22 +13,28 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
+@Entity
 @Table(name = "recipe")
 public class Recipe {
-    @JsonIgnore()
+
     @Id
+    @JsonIgnore()
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @NotNull
     @NotBlank
     private String name;
+
     @NotNull
     @NotBlank
     private String category;
+
     @Column(columnDefinition = "TIMESTAMP")
     @JsonFormat(pattern = "dd.MM.YYYY HH:mm:ss.SSSSSS")
     private LocalDateTime date;
@@ -51,19 +57,6 @@ public class Recipe {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-    public Recipe(String name,
-                  String category,
-                  String description,
-                  List<String> ingredients,
-                  List<String> directions) {
-
-        this.name = name;
-        this.category = category;
-        this.description = description;
-        this.ingredients = ingredients;
-        this.directions = directions;
-    }
 
     public User getUser() {
        return  this.user;

@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Table(name = "user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -31,7 +32,7 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private ArrayList<Recipe> recipes = new ArrayList<>();
+    private List<Recipe> recipes = new ArrayList<>();
 
     @Column(name = "role")
     private String roles = "USER";
@@ -39,7 +40,9 @@ public class User {
     public String getEmail() {
         return this.email;
     }
-    public ArrayList<Recipe> getRecipes() {
-        return this.recipes;
+
+    public void addRecipe(Recipe recipe)
+    {
+        recipes.add(recipe);
     }
 }
