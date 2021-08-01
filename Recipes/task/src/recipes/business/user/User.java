@@ -2,17 +2,16 @@ package recipes.business.user;
 
 import lombok.*;
 import recipes.business.recipe.Recipe;
-
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
+@Entity
 @Table(name = "user")
 public class User {
 

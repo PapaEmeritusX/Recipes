@@ -14,9 +14,7 @@
   <component name="NewModuleRootManager">
     <output-test url="file://$MODULE_DIR$/../../../../Recipes/task/out/test/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../../Recipes/task/src/test">
-      <sourceFolder url="file://$MODULE_DIR$/../../../../Recipes/task/src/test/generated_tests" isTestSource="true" generated="true" />
-    </content>
+    <content url="file://$MODULE_DIR$/../../../../Recipes/task/src/test" />
     <content url="file://$MODULE_DIR$/../../../../Recipes/task/test">
       <sourceFolder url="file://$MODULE_DIR$/../../../../Recipes/task/test" isTestSource="true" />
     </content>
